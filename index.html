@@ -118,22 +118,22 @@ var Password = $("input[name=Login_Password]").val();
 if(Email == '' || Password == '')
     {
         Swal.fire('Fill all the fields..');
-    }else{
-var user_login_info = {
+    }
+// var user_login_info = {
 
-    Email:Email,
-    Password:Password
-}
+//     Email:Email,
+//     Password:Password
+// }
 
-$.ajax({
-        type: "POST",
-        url: 'validation.php',
-        data: user_login_info,
-        success: function(response)
-        {
-            var response = JSON.parse(response);
-            if(response)
-            {
+// $.ajax({
+//         type: "POST",
+//         url: 'validation.php',
+//         data: user_login_info,
+//         success: function(response)
+//         {
+//             var response = JSON.parse(response);
+//             if(response)
+//             {
                 // console.log(response.status);
 
               //  if(response.status == 'success')
@@ -144,17 +144,18 @@ $.ajax({
                 //  window.location.href = 'profile.php';
                     
               //  }
-                if (response.status == 'success') {
+    else{
+                if (Email="vijay010103@gmail.com" && Password="123") {
                  Swal.fire({
                  icon: 'success',
                  title: 'Login Successfully',
                 showConfirmButton: false,
                  timer: 1500
             }).then(function () {
-                     window.location.href = 'profile.php';
+                     window.location.href = 'profile.html';
                 });
                 }
-                else if(response.status == 'Invalid')
+                else 
                 {
                     Swal.fire({
                  icon: 'error',
@@ -163,20 +164,20 @@ $.ajax({
                  timer: 1500
             });
                 }
-                else if(response.status == 'Error')
-                {
-                    Swal.fire(response.Error);
-                }
-            }
-            else
-            {
-                console.log('Error');
-            }
+                // else if(response.status == 'Error')
+                // {
+                //     Swal.fire(response.Error);
+                // }
+            // }
+            // else
+            // {
+            //     console.log('Error');
+            // }
        }
-   });
+   // });
 
 }
-}
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
     const formContainer = document.getElementById("container");
